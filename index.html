@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Begović Watches — Časovničar, Novi Pazar</title>
+<meta name="description" content="Prodaja, servis, otkup i zamena satova u Novom Pazaru. Ensar Begović, časovničar od 2021.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000; --panel:#15110e; --gilt:#c9a35b; --gilt-hi:#e6c98a;
+  --ink:#ece2cd; --muted:#9a8f7c; --oxblood:#6b1e1e; --line:rgba(201,163,91,.28);
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root[data-theme="light"]{ /* brand is dark by design; light keeps the same */ }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#000; } }
+:root[data-theme="dark"]{ --bg:#000; }
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:400 1.125rem/1.6 "Cormorant Garamond",Garamond,"Times New Roman",serif;
+  background-image:radial-gradient(ellipse at 70% 0%,rgba(201,163,91,.10),transparent 55%);
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+.cinzel{font-family:Cinzel,"Trajan Pro",Georgia,serif}
+
+/* header */
+header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand img{width:2.8rem;height:2.8rem;clip-path:circle(46%)}
+.brand b{font:600 1.15rem/1 Cinzel,Georgia,serif;letter-spacing:.08em;color:var(--gilt-hi)}
+.brand small{display:block;font:400 .62rem/1.4 Cinzel,Georgia,serif;letter-spacing:.4em;color:var(--muted)}
+nav{display:flex;gap:1.2rem;font:400 .85rem/1 Cinzel,Georgia,serif;letter-spacing:.06em}
+nav a{text-decoration:none;color:var(--muted);padding:.4rem 0}
+nav a:hover{color:var(--gilt-hi)}
+@media (max-width:640px){nav{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2rem;padding:1.5rem 0 3rem;border-bottom:1px solid var(--line)}
+.hero h1{margin:0;font:800 clamp(2.6rem,7vw,4.6rem)/.95 Cinzel,Georgia,serif;letter-spacing:.04em;color:var(--gilt-hi);
+  text-shadow:0 1px 0 #000,0 0 30px rgba(201,163,91,.18)}
+.hero .sub{margin:.6rem 0 1.4rem;font:400 .9rem/1.4 Cinzel,Georgia,serif;letter-spacing:.32em;color:var(--muted)}
+.hero p.lead{font-style:italic;font-size:1.4rem;line-height:1.4;margin:0 0 1.6rem;max-width:26ch}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.8rem 1.3rem;font:600 .82rem/1 Cinzel,Georgia,serif;letter-spacing:.1em;text-decoration:none;
+  border:1px solid var(--gilt);color:var(--bg);background:linear-gradient(180deg,var(--gilt-hi),var(--gilt));border-radius:2px}
+.btn.ghost{background:transparent;color:var(--gilt-hi)}
+.btn svg{width:1.05rem;height:1.05rem}
+.btn:hover{filter:brightness(1.08)}
+:focus-visible{outline:2px solid var(--gilt-hi);outline-offset:3px}
+
+/* the clock — the one bold element */
+.logo-hero{display:block;width:min(100%,24rem);height:auto;aspect-ratio:1;margin-inline:auto;clip-path:circle(46.5%);filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+.where{display:flex;justify-content:center;gap:1.4rem;margin-top:1rem;font-size:1rem;color:var(--muted)}
+.where span{display:flex;align-items:center;gap:.4rem}
+.where svg{width:1rem;height:1rem;color:var(--gilt)}
+@media (max-width:760px){.hero{grid-template-columns:1fr;text-align:center}.hero p.lead{margin-inline:auto}.btns{justify-content:center}.logo-hero{width:min(80%,20rem)}}
+
+/* sections */
+section{padding:2.6rem 0;border-bottom:1px solid var(--line)}
+h2{margin:0 0 1.4rem;font:600 1.5rem/1.2 Cinzel,Georgia,serif;letter-spacing:.06em;color:var(--gilt-hi);display:flex;align-items:center;gap:1rem}
+h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+.svc{padding:1.3rem 1.2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:2.4rem 1fr;gap:.2rem .9rem}
+.svc:nth-child(3n){border-right:0}.svc:nth-last-child(-n+3){border-bottom:0}
+.svc svg{width:2rem;height:2rem;color:var(--gilt);grid-row:span 2}
+.svc h3{margin:0;font:600 1rem/1.3 Cinzel,Georgia,serif;letter-spacing:.03em}
+.svc p{margin:0;color:var(--muted);font-size:1.02rem;line-height:1.4}
+@media (max-width:760px){.services{grid-template-columns:1fr 1fr}.svc:nth-child(3n){border-right:1px solid var(--line)}.svc:nth-child(2n){border-right:0}.svc:nth-last-child(-n+3){border-bottom:1px solid var(--line)}.svc:nth-last-child(-n+2){border-bottom:0}}
+@media (max-width:460px){.services{grid-template-columns:1fr}.svc{border-right:0!important;border-bottom:1px solid var(--line)!important}.svc:last-child{border-bottom:0!important}}
+
+.about{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start}
+.seal{width:7.5rem;height:7.5rem;clip-path:circle(46%)}
+.about h3{margin:0;font:600 1.3rem/1.2 Cinzel,Georgia,serif;color:var(--ink)}
+.about .role{margin:.2rem 0 .8rem;color:var(--gilt);font-style:italic}
+.about p{margin:0;max-width:60ch}
+@media (max-width:560px){.about{grid-template-columns:1fr;justify-items:center;text-align:center}}
+
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.contact div h3{margin:0 0 .5rem;font:600 .9rem/1 Cinzel,Georgia,serif;letter-spacing:.08em;color:var(--gilt)}
+.contact a,.contact span{display:block;text-decoration:none;line-height:1.7}
+.contact a:hover{color:var(--gilt-hi)}
+@media (max-width:640px){.contact{grid-template-columns:1fr}}
+
+footer{padding:1.6rem 0 6rem;text-align:center;color:var(--muted);font-size:.95rem}
+footer i{display:block;font-size:1.3rem;color:var(--gilt);margin-bottom:.3rem}
+
+.wa-float{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:20;width:3.6rem;height:3.6rem;border-radius:50%;
+  display:grid;place-items:center;background:linear-gradient(180deg,var(--gilt-hi),var(--gilt));color:var(--bg);box-shadow:0 8px 24px rgba(0,0,0,.5);border:1px solid #000}
+.wa-float svg{width:1.8rem;height:1.8rem}
+</style>
+</head>
+<body>
+<!-- ============ EDIT HERE: phone (international format, digits only) and Instagram username ============ -->
+<script>
+  window.BW = {
+    whatsapp: "381631298664",       // e.g. 381631234567
+    phoneLabel: "063 129 8664",     // how the number is shown
+    instagram: "begovic_watches"    // without @
+  };
+</script>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header>
+    <a class="brand" href="#" aria-label="Begović Watches">
+      <img class="js-logo" alt="" width="44" height="44">
+      <span><b>BEGOVIĆ</b><small>WATCHES</small></span>
+    </a>
+    <nav aria-label="Glavni meni">
+      <a href="#usluge">Usluge</a><a href="#o-meni">O meni</a><a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Begović<br>Watches</h1>
+      <div class="sub">ČASOVNIČAR · NOVI PAZAR</div>
+      <p class="lead">Satovi sa istorijom. Preciznost u svakom detalju.</p>
+      <div class="btns">
+        <a class="btn js-wa" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Piši na WhatsApp</a>
+        <a class="btn ghost js-ig" href="#" target="_blank" rel="noopener"><svg><use href="#ig"/></svg>Instagram</a>
+      </div>
+    </div>
+    <div>
+      <img class="logo-hero" id="logo-src" src="e240873d-3ecc-43c1-9675-df25cdcbb399.jpeg" alt="Begović Watches logo – BW, est. 2021" width="1254" height="1254">
+      <div class="where">
+        <span><svg><use href="#pin"/></svg>Novi Pazar</span>
+        <span>Od 2021.</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="usluge" aria-labelledby="h-usluge">
+    <h2 id="h-usluge">Usluge</h2>
+    <div class="services">
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="6"/><path d="M9 6 9.5 2h5L15 6M9 18l.5 4h5l.5-4M12 9v3l2 1"/></svg><h3>Prodaja satova</h3><p>Vintage, polovni i provereni satovi.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg><h3>Otkup i zamena</h3><p>Vaš sat može biti deo nove kolekcije.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14.5 4.5a4 4 0 0 0 5 5L10 19a2.1 2.1 0 0 1-3-3l9.5-9.5a4 4 0 0 0-2-2Z"/></svg><h3>Servis i popravke</h3><p>Kvarovi, zamena delova, podešavanje.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="7" y="4" width="10" height="17" rx="2"/><path d="M10 2h4M10 15h4M10 12h4"/></svg><h3>Zamena baterija</h3><p>Brzo i profesionalno, dok čekate.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5ZM18 15l.7 2.3L21 18l-2.3.7L18 21l-.7-2.3L15 18l2.3-.7Z"/></svg><h3>Poliranje</h3><p>Kućišta i narukvice vraćaju originalni sjaj.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg><h3>Restauracija</h3><p>Stari satovi dobijaju novi život.</p></div>
+    </div>
+  </section>
+
+  <section id="o-meni" aria-labelledby="h-o-meni">
+    <h2 id="h-o-meni">O meni</h2>
+    <div class="about">
+      <img class="seal js-logo" alt="" width="120" height="120">
+      <div>
+        <h3>Ensar Begović</h3>
+        <div class="role">Časovničar u Novom Pazaru, od 2021.</div>
+        <p>Bavim se prodajom, otkupom i svim vrstama popravki satova. Posvećen sam kvalitetu, preciznosti i poverenju svakog klijenta. Radim sa svim poznatim markama i modelima, od vintage satova do modernih časovnika.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" aria-labelledby="h-kontakt">
+    <h2 id="h-kontakt">Kontakt</h2>
+    <div class="contact">
+      <div>
+        <h3>Pišite mi</h3>
+        <a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp: <span class="js-phone" style="display:inline"></span></a>
+        <a class="js-tel" href="#">Poziv: <span class="js-phone" style="display:inline"></span></a>
+        <a class="js-ig" href="#" target="_blank" rel="noopener">Instagram: <span class="js-ighandle" style="display:inline"></span></a>
+      </div>
+      <div>
+        <h3>Lokacija</h3>
+        <span>Novi Pazar, Srbija</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=Novi+Pazar" target="_blank" rel="noopener">Otvori na mapi</a>
+      </div>
+      <div>
+        <h3>Radno vreme</h3>
+        <span>Pon – Sub: 09:00 – 20:00</span>
+        <span>Nedeljom: po dogovoru</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <i>Hvala na poverenju.</i>
+    Begović Watches · Novi Pazar · © <span id="yr"></span>
+  </footer>
+</div>
+
+<a class="wa-float js-wa" href="#" target="_blank" rel="noopener" aria-label="Kontakt preko WhatsApp-a"><svg><use href="#wa"/></svg></a>
+
+<script>
+(function(){
+  var C = window.BW;
+  var waText = encodeURIComponent("Zdravo, pišem sa sajta Begović Watches.");
+  document.querySelectorAll(".js-wa").forEach(function(a){ a.href = "https://wa.me/" + C.whatsapp + "?text=" + waText; });
+  document.querySelectorAll(".js-tel").forEach(function(a){ a.href = "tel:+" + C.whatsapp; });
+  document.querySelectorAll(".js-ig").forEach(function(a){ a.href = "https://instagram.com/" + C.instagram; });
+  document.querySelectorAll(".js-phone").forEach(function(s){ s.textContent = C.phoneLabel; });
+  document.querySelectorAll(".js-ighandle").forEach(function(s){ s.textContent = "@" + C.instagram; });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  var src=document.getElementById("logo-src").src;
+  document.querySelectorAll(".js-logo").forEach(function(i){i.src=src;});
+  var ic=document.createElement("link");ic.rel="icon";ic.href=src;document.head.appendChild(ic);
+})();
+</script>
+</body>
+</html>
